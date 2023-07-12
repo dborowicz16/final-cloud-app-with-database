@@ -121,7 +121,7 @@ def submit(request, course_id):
         submission.choices.add(choice_id)
 
     # Redirect to the show_exam_result view with the submission id
-    return redirect(reverse('show_exam_result', args=[submission.id]))
+    return HttpResponseRedirect(reverse(viewname="onlinecourse:exam_result", args=(course_id, submission_id)))
 
 
 
